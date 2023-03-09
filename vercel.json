@@ -1,0 +1,18 @@
+{
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "command": "npm run build"
+  },
+  "routes": [
+    {
+      "src": "/api/.*",
+      "dest": "api/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "build/index.html"
+    }
+  ]
+}

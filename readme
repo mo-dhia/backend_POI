@@ -1,0 +1,21 @@
+............................::::::::::USER_CRUD::::::::::............................
+signup: method = post, url= /api/user/signup, body = {email, name, password}                            output= {newUser}
+signin: method = post, url = /api/user/login, body = {email, password}                                  output= {user}
+update: method = patch, url /api/user       , body = {id, update}                                       output= {updatedUser}
+delete: method = delete,url=/api/user/id    , body = null                                               output= string success
+............................::::::::::POINTS-OF-INTRESTS_CRUD::::::::::............................
+
+addPoint :method = post,  url= /api/point,                body = {trip:"string", imgUrl, desc, name , +any}output = added el
+editPoint:method = patch, url= /api/point/:category/:id   body = el to updat example {title : "changed"}   output = string success 
+deletePt :method = delete,url= /api/point/:category/:id   body = null                                      output = string success
+getAll   :method = get,   url= /api/point,                body = null                                      output = [trip:[points]]
+getPointsof1trip:method = get,   url= /api/point/:trip,   body = null                                      output = [points]
+
+PS: Adding a point does not require adding trip first, if a point is added in an uknown trip, the trip will be added automatically
+same goes for deleting if all points are deleted from a trip the trip itself will be deleted.
+
+............................::::::::::TRIPS_CRUD::::::::::............................
+getTrips :method = get, url  = /api/point/trip          body = null                                      output = [{trip}]
+addTrip  :method = post,url  = /api/point/trip          body = {imgUrl, desc, name , +any}               output = string success
+updateTrip:method= patch,url = /api/point/trip/:name    body = any                                       output = string success
+deleteTrip:method= delete,url= /api/point/trip/:name    body = null                                      output = string success
